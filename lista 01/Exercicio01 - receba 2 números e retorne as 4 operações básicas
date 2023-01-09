@@ -1,0 +1,35 @@
+class Calculate {​​​
+  int? num1;
+  int? num2;
+  
+  int? sum() {​​​
+    if(num1 != null && num2 != null) ​​​ return num1! + num2!;​​​
+    return null;
+  }​​​
+ 
+  double? divide() {​​​
+    if(num1 != null && num2 != null) num1! / num2!;​​​
+    return null;
+  }​​​
+  int? multiply() {​​​
+    if(num1 != null && num2 != null) num1! * num2!;​​​
+    return null;
+  }​​​
+ 
+  int? subtract() {​​​
+    if(num1 != null && num2 != null) num1! - num2!;​​​
+    return null;
+  }​​​
+}​​​
+ 
+void main() {​​​
+  final calculate = Calculate();
+  calculate.num1 = 4;
+  calculate.num2 = 5;
+ 
+  print(calculate.sum());
+  print(calculate.subtract());
+  print(calculate.divide());
+  print(calculate.multiply());
+ 
+}​​

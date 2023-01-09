@@ -1,0 +1,19 @@
+import 'dart:math' as math;
+ 
+class  Circle {
+  double calculatePerimeter(double radius,{double pi = 3.141592}) => 2 * pi * radius;
+  
+  
+  double calculateArea(double radius,{double pi = 3.141592}) => pi * math.pow(radius, 2);
+  
+} 
+ 
+ 
+void main() {
+  
+  final circle = Circle();
+  print(circle.calculateArea(10));
+ 
+  print(circle.calculatePerimeter(12));
+ 
+} 

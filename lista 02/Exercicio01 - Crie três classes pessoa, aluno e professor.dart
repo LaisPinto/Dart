@@ -1,37 +1,37 @@
 abstract class Person {
-  int? code;
-  String? name;
-  String? lastName;
+  int code;
+  String name;
+  String lastName;
 
-  Person(this.code, this.name, this.lastName);
+  Person({required this.code, required this.name, required this.lastName});
 
-  String? getNameCapital() => "${name?.toUpperCase()} ${lastName?.toUpperCase()}";
+  String getCapitalizedName() => "${name.toUpperCase()} ${lastName.toUpperCase()}";
 
-  String? getNameFull() => "${name?.toLowerCase()} ${lastName?.toLowerCase()}";
+  String getFullName() => "${name.toLowerCase()} ${lastName.toLowerCase()}";
 
   @override
   String toString() => "$code $name $lastName";
 }
 
 class Student extends Person {
-  double? noteOne;
-  double? noteTwo;
+  double? gradeOne;
+  double? gradeTwo;
 
-  Student(int? code, String? name, String? lastName, this.noteOne, this.noteTwo) : super(code, name, lastName);
+  Student(int code, String name, String lastName, this.gradeOne, this.gradeTwo) : super(code: code, name: name, lastName: lastName);
 
-  double? calculateAverage() => (noteOne! + noteTwo!) / 2;
+  double calculateAverage() => (gradeOne! + gradeTwo!) / 2;
 
   @override
-  String toString() => "$noteOne $noteTwo ${super.toString()}";
+  String toString() => "$gradeOne $gradeTwo ${super.toString()}";
 }
 
 class Teacher extends Person {
-  double? valueHour;
-  double? workedHour;
+  double valueHour;
+  double workedHour;
 
-  Teacher(int? code, String? name, String? lastName, this.valueHour, this.workedHour) : super(code, name, lastName);
+  Teacher(int code, String name, String lastName, this.valueHour, this.workedHour) : super(code: code, name: name, lastName: lastName);
 
-  double calculateSalary() => (workedHour! * valueHour!);
+  double calculateSalary() => (workedHour * valueHour);
 
   @override
   String toString() => "$valueHour $workedHour ";
@@ -40,8 +40,8 @@ class Teacher extends Person {
 void main() {
   final student = Student(1, 'lais', 'pinto', 10, 5);
   print(student.calculateAverage());
-  print(student.getNameCapital());
-  print(student.getNameFull());
+  print(student.getCapitalizedName());
+  print(student.getFullName());
 
   final teache = Teacher(1, 'lais', 'pinto', 12, 30);
   print(teache.calculateSalary());

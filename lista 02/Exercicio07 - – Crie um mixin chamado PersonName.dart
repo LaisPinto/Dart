@@ -1,22 +1,17 @@
 mixin PersonName {
-  String? getAbbreviation(name) {
-    if (name != null) {
-      return name.toUpperCase().substring(0, 3);
-    }
-    return "BAD";
-  }
+  String getAbbreviation(String? name) => (name != null) ? name.toUpperCase().substring(0, 3) : "BAD";
 }
 
 class Person with PersonName {
-  String? name;
+  String name;
 
-  Person(this.name);
+  Person({required this.name});
 
   @override
   String toString() => "$name ${getAbbreviation(name)}";
 }
 
 void main() {
-  final person = Person("Lais");
+  final person = Person(name: "Lais");
   print(person);
 }

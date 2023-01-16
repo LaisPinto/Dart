@@ -4,14 +4,14 @@ class Project {
   String? title;
   bool? completed;
 
-  Project(this.userId, this.id, this.title, this.completed);
+  Project({required this.userId, required this.id, required this.title, required this.completed});
 
-  Project.fromMap(Map<String, dynamic> map) {
-    userId = map['userId'] ?? 1;
-    id = map['id'] ?? 1;
-    title = map['title'] ?? 'delectus aut autem';
-    completed = map['completed'] ?? false;
-  }
+  factory Project.fromMap(Map<String, dynamic> map) => Project(
+        userId: map['userId'] ?? 1,
+        id: map['id'] ?? 1,
+        title: map['title'] ?? 'delectus aut autem',
+        completed: map['completed'] ?? false,
+      );
 
   @override
   String toString() => "userId: $userId \nid: $id \ntitle: $title \ncompleted: $completed";
@@ -22,9 +22,9 @@ void main() {
     {"userId": 1, "id": 1, "title": "delectus aut autem", "completed": false}
   ];
 
-  final List<Project> people = mock.map((element) => Project.fromMap(element)).toList();
+  final List<Project> projects = mock.map((project) => Project.fromMap(project)).toList();
 
-  for (var project in people) {
+  for (var project in projects) {
     print(project);
   }
 }

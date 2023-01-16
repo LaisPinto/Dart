@@ -1,25 +1,20 @@
 class Person {
-  String? name;
+  String name;
 
-  Person({this.name});
+  Person({required this.name});
 
-  Person.fromMap(Map<String, String> map) {
-    name = map['name'] ?? 'Valor nulo';
-  }
+  factory Person.fromMap(Map<String, dynamic> map) => Person(name: map['name']);
 
   @override
-  String toString() {
-    return "Nome: $name";
-  }
+  String toString() => "Nome: $name";
 }
 
 void main() {
   const mock = [
-    {"name": "Thiago"},
-    {"name": "Zé"}
+    {"name": "Thiago"}
   ];
 
-  final List<Person> people = mock.map((element) => Person.fromMap(element)).toList();
+  final List<Person> people = mock.map((person) => Person.fromMap(person)).toList();
 
   for (var person in people) {
     print(person);

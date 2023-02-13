@@ -1,12 +1,12 @@
-abstract class Implementation {
+abstract class IPerson {
   String? getAbbreviation();
 }
 
-class Showname implements Implementation {
+class Person implements IPerson {
   String? name;
   String? lastname;
 
-  Showname(this.name, this.lastname);
+  Person(this.name, this.lastname);
 
   @override
   String? getAbbreviation() =>
@@ -17,6 +17,6 @@ class Showname implements Implementation {
 }
 
 void main() {
-  final showname = Showname("lais", "pinto");
-  print(showname);
+  final person = Person("lais", "pinto");
+  print(person);
 }

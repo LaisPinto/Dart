@@ -1,6 +1,6 @@
-class ShowName {
-  void checkName() {
-    dynamic name = 20;
+class GetName {
+  void ShowName() {
+    int name = 20;
     int i = 1;
 
     while (i <= name) {
@@ -11,6 +11,6 @@ class ShowName {
 }
 
 void main() {
-  final showname = ShowName();
-  showname.checkName();
+  final getName = GetName();
+  getName.ShowName();
 }
